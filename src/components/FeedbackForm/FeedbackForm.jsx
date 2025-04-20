@@ -28,7 +28,7 @@ function FeedbackForm() {
     <div className="max-w-full">
       <Navbar />
 
-      <div className="max-w-xl mx-auto bg-white p-6 rounded shadow mt-10">
+      <div className="max-w-xl mx-auto bg-white p-6 rounded shadow mt-10 border border-r-2 border-black border-b-2">
         <h2 className="text-2xl font-semibold mb-4">💬 Feedback</h2>
 
         {submitted ? (
