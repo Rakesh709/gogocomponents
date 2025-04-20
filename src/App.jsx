@@ -1,4 +1,3 @@
-
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Sidebar from "./components/Sidebar";
 import ComponentPreview from "./components/ComponentPreview";
@@ -11,8 +10,6 @@ import ProfileCard from "./components/Cards/ProfileCard.jsx";
 import ImageCard from "./components/Cards/ImageCard.jsx";
 import PasswordInput from "./components/Inputs/PasswordInput.jsx";
 import FloatingLabelInput from "./components/Inputs/FloatingLabelInput.jsx";
-import ThemePicker from "./components/ThemePicker/ThemePicker.jsx";
-import OTPInput from "./components/OtpInput/OTPInput.jsx";
 import Badges from "./components/Badges/badges.jsx";
 import NavBarLogo from "./components/NavBarLogo/NavBarLogo.jsx";
 
@@ -197,7 +194,7 @@ const imageCard = `
 
 //input component
 
-const passwordInput=`
+const passwordInput = `
   import React from "react";
   import { useState } from "react";
   import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -225,9 +222,9 @@ const passwordInput=`
   }
   
   export default PasswordInput;
-`
+`;
 
-const floatingLabelInput=`
+const floatingLabelInput = `
   import React from "react";
   
   function FloatingLabelInput() {
@@ -253,10 +250,10 @@ const floatingLabelInput=`
   
   export default FloatingLabelInput;
   
-`
+`;
 
 //theme picker
-const themePicker =`
+const themePicker = `
   import React from 'react'
   import { useState } from "react";
   
@@ -298,34 +295,10 @@ const themePicker =`
   }
   
   export default ThemePicker
-`
-//otp Input
-
-const otpInput=`
-import React, { useState } from "react";
-import OtpInput from "react-otp-input";
-
-function OTPInput() {
-  const [otp, setOtp] = useState("");
-  return (
-    <div className="flex justify-center">
-      <OtpInput
-        value={otp}
-        onChange={setOtp}
-        numInputs={6}
-        separator={<span className="mx-1">-</span>}
-        inputStyle="w-10 h-10 border rounded text-center"
-        isInputNum
-      />
-    </div>
-  );
-}
-
-export default OTPInput;
-`
+`;
 
 //Badges
-const badge=`
+const badge = `
 import React from "react";
 
 function Badges() {
@@ -352,7 +325,7 @@ function Badges() {
 
 export default Badges;
 
-`
+`;
 
 export default function App() {
   return (
@@ -365,35 +338,27 @@ export default function App() {
           <h2 className="text-3xl font-bold mb-6 text-brown-900">
             All Components
           </h2>
-          {/* Theme Picker */}
+
+          {/*--------------- Theme Picker ---------------------*/}
 
           <div id="themePicker">
             <h3 className="text-xl font-bold">ThemePicker Component</h3>
             <ComponentPreview title="Theme Picker" code={themePicker}>
               {/* <ThemePicker /> */}
-              <p>Sorry my Friend 😊 No Preview Available  </p>
+              <p>Sorry my Friend 😊 No Preview Available </p>
             </ComponentPreview>
-
           </div>
 
-          {/* otp Input 
-          <div id="otpInput">
-            <h3 className="text-xl font-bold">OTP Input</h3>
-            <ComponentPreview title="OTP Input" code={otpInput}>
-              <OTPInput/>
-            </ComponentPreview>
+         
 
-          </div> */}
-
-
-          {/* ------------------------------------------------- */}
+          {/* ---------------------NavBar---------------------------- */}
           <div id="navbarSection">
             <h3 className="text-xl font-bold">Navbar Component</h3>
             <ComponentPreview title="NavBar Section" code={navbarCode}>
               <NavBarLogo />
             </ComponentPreview>
           </div>
-          {/* ------------------------------------------------- */}
+          {/* ----------------------Toogle--------------------------- */}
           <div id="toggleSection">
             <h3 className="text-xl font-bold">Toggle Button Component</h3>
             <ComponentPreview title="Toggle Button" code={toogleButton}>
@@ -432,7 +397,7 @@ export default function App() {
             </ComponentPreview>
           </div>
 
-          {/* inputComponents */}
+          {/*------------------ inputComponents--------------- */}
 
           <div id="inputSection">
             <h3 className="text-xl font-bold">Input Component</h3>
@@ -445,16 +410,13 @@ export default function App() {
             </ComponentPreview>
           </div>
 
-          {/* badges section */}
+          {/* ---------------------badges section------------------- */}
           <div id="badgeSection">
             <h3 className="text-xl font-bold">Badge Component</h3>
             <ComponentPreview title="Badge" code={badge}>
-              <Badges/>
+              <Badges />
             </ComponentPreview>
-
-          
           </div>
-
         </main>
       </div>
     </div>
