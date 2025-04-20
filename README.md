@@ -1,12 +1,45 @@
-# React + Vite
+# GoGoComponent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="font-size:24px;font-family:sans-serif">
+  This is the ready to use components for react .
+ </div>
+ 
+ ## Features
+ <ul>
+  <li>Simple to use</li>
+  <li>No extra configration required</li>
+  <li>copy and past</li>
+  <li>fully customizable</li>
+</ul>
 
-Currently, two official plugins are available:
+## Tech Stack used:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
 
-## Expanding the ESLint configuration
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png"></code>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## <code>Home Page</code>
+
+![img](https://drive.google.com/file/d/1rfp8PxmGuDY9Neiy31Hs_be_aaUDGUco/view?usp=sharing)
+
+## <code>Component Page</code>
+
+![img](https://drive.google.com/file/d/1yAaFd-W4SJNDkH6XldcZgVOor4j6AZSB/view?usp=sharing)
+
+## Tech Library used:
+
+  <ul>
+    <li>React +Vite </li>
+    <li>express</li>
+    <li>react-router</li>
+    <li>react-dom</li>
+    <li>react-icons</li>
+    <li>lucide-react</li>
+    <li>tailwindcss</li>
+  </ul>
+
+<a href="#">Live Version</a>
