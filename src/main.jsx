@@ -6,16 +6,16 @@ import Homepage from "./components/HomePage/Homepage.jsx";
 import Documentation from "./components/Documentation/Documentation.jsx";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm.jsx";
 import Layout from "./components/Layout/Layout.jsx"; // New Layout
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider,Navigate } from "react-router-dom";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route index element={<Homepage />} />
+      <Route path="/" element={<Layout />}>
+      <Route path="*" element={< Navigate to="/"/>} />
       <Route path="components" element={<App />} />
       <Route path="docs" element={<Documentation />} />
       <Route path="feedback" element={<FeedbackForm />} />
-    </Route>
+      </Route>
   )
 );
 
