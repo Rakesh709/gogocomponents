@@ -10,7 +10,7 @@ import ProfileCard from "./components/Cards/ProfileCard.jsx";
 import ImageCard from "./components/Cards/ImageCard.jsx";
 import PasswordInput from "./components/Inputs/PasswordInput.jsx";
 import FloatingLabelInput from "./components/Inputs/FloatingLabelInput.jsx";
-import Badges from "./components/Badges/badges.jsx";
+import Badges from "./components/Badges/Badges.jsx"
 import NavBarLogo from "./components/NavBarLogo/NavBarLogo.jsx";
 
 const navbarCode = `
