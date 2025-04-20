@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 function Navbar() {
   return (
@@ -9,17 +9,45 @@ function Navbar() {
         GoGoComponent⚡
       </h1>
       <nav className="space-x-6">
-       
-        <Link to="/homepage" className="hover:underline font-medium">Home</Link>
+        {/* <Link to="/homepage" className="hover:underline font-medium">
+          Home
+        </Link> */}
 
-    
-        <Link to="/components" className="hover:underline font-medium">Components</Link>
+        <NavLink to="/homepage">
+          {({ isActive, isPending, isTransitioning }) => (
+            <span className={isActive ? "active" : ""}>Home</span>
+          )}
+        </NavLink>
 
-        
-        <Link to="/docs" className="hover:underline font-medium">Document</Link>
-        
+        {/* <Link to="/components" className="hover:underline font-medium">
+          Components
+        </Link> */}
 
-        <Link to="/feedback" className="hover:underline font-medium">Feedback</Link>
+        <NavLink to="/components">
+          {({ isActive, isPending, isTransitioning }) => (
+            <span className={isActive ? "active" : ""}>Components</span>
+          )}
+        </NavLink>
+
+        {/* <Link to="/docs" className="hover:underline font-medium">
+          Document
+        </Link> */}
+
+        <NavLink to="/docs">
+          {({ isActive, isPending, isTransitioning }) => (
+            <span className={isActive ? "active" : ""}>Document</span>
+          )}
+        </NavLink>
+
+        {/* <Link to="/feedback" className="hover:underline font-medium">
+          Feedback
+        </Link> */}
+
+        <NavLink to="/feedback">
+          {({ isActive, isPending, isTransitioning }) => (
+            <span className={isActive ? "active" : ""}>Feedback</span>
+          )}
+        </NavLink>
 
         <button className="bg-brown-700 text-black px-4 py-1 border-r-black rounded cursor-pointer border-1 border-r-2">
           <a
