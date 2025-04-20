@@ -2,7 +2,7 @@
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Sidebar from "./components/Sidebar";
 import ComponentPreview from "./components/ComponentPreview";
-import Toggle from "./components/Toggle";
+import Toggle from "./components/Toggle/Toggle.jsx";
 import PrimaryButton from "./components/Buttons/PrimaryButton.jsx";
 import OutlineButton from "./components/Buttons/OutlineButton.jsx";
 import GhostButton from "./components/Buttons/GhostButton.jsx";
@@ -14,6 +14,7 @@ import FloatingLabelInput from "./components/Inputs/FloatingLabelInput.jsx";
 import ThemePicker from "./components/ThemePicker/ThemePicker.jsx";
 import OTPInput from "./components/OtpInput/OTPInput.jsx";
 import Badges from "./components/Badges/badges.jsx";
+import NavBarLogo from "./components/NavBarLogo/NavBarLogo.jsx";
 
 const navbarCode = `
               import React from 'react'
@@ -389,7 +390,7 @@ export default function App() {
           <div id="navbarSection">
             <h3 className="text-xl font-bold">Navbar Component</h3>
             <ComponentPreview title="NavBar Section" code={navbarCode}>
-              <Navbar />
+              <NavBarLogo />
             </ComponentPreview>
           </div>
           {/* ------------------------------------------------- */}
