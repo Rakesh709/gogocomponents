@@ -13,7 +13,7 @@ function Navbar() {
         <a href="/components" className="hover:underline font-medium">
           Components
         </a>
-        <a href="#" className="hover:underline font-medium">
+        <a href="/docs" className="hover:underline font-medium">
           Docs
         </a>
         <a href="#" className="hover:underline font-medium">
