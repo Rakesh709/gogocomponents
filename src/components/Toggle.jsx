@@ -14,7 +14,7 @@ const Toggle = () => {
         <span
           className={"absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300 flex items-center justify-center text-[16px] " + (isOn ? "translate-x-6" : "")}
         >
-          {isOn ? "🌞" : "🌙"}
+          {isOn ? "☀️" : "🌛"}
         </span>
       </button>
       </div>

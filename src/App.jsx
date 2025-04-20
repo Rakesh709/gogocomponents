@@ -11,6 +11,9 @@ import ProfileCard from "./components/Cards/ProfileCard.jsx";
 import ImageCard from "./components/Cards/ImageCard.jsx";
 import PasswordInput from "./components/Inputs/PasswordInput.jsx";
 import FloatingLabelInput from "./components/Inputs/FloatingLabelInput.jsx";
+import ThemePicker from "./components/ThemePicker/ThemePicker.jsx";
+import OTPInput from "./components/OtpInput/OTPInput.jsx";
+import Badges from "./components/Badges/badges.jsx";
 
 const navbarCode = `
               import React from 'react'
@@ -251,6 +254,105 @@ const floatingLabelInput=`
   
 `
 
+//theme picker
+const themePicker =`
+  import React from 'react'
+  import { useState } from "react";
+  
+  const themes = [
+    { name: "Light", color: "#fef3c7" },
+    { name: "Dark", color: "#1f2937" },
+    { name: "Neon", color: "#34d399" },
+    { name: "Candy", color: "#f472b6" },
+  ];
+  
+  function ThemePicker() {
+      const [selectedTheme, setSelectedTheme] = useState(null);
+    return (
+      <div className="fixed bottom-6 right-6 bg-white shadow-lg border rounded-lg p-4 w-56">
+        <h4 className="font-bold mb-3 text-gray-700">🎨 Pick a Theme</h4>
+        <div className="grid grid-cols-2 gap-3">
+          {themes.map((theme) => (
+            <button
+              key={theme.name}
+              onClick={() => setSelectedTheme(theme.name)}
+              className="flex items-center gap-2 p-2 border rounded hover:scale-105 transition-transform"
+              style={{ borderColor: theme.color }}
+            >
+              <div
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: theme.color }}
+              ></div>
+              <span className="text-sm">{theme.name}</span>
+            </button>
+          ))}
+        </div>
+        {selectedTheme && (
+          <p className="mt-3 text-sm text-gray-600 text-center">
+            Selected: <span className="font-semibold">{selectedTheme}</span>
+          </p>
+        )}
+      </div>
+    )
+  }
+  
+  export default ThemePicker
+`
+//otp Input
+
+const otpInput=`
+import React, { useState } from "react";
+import OtpInput from "react-otp-input";
+
+function OTPInput() {
+  const [otp, setOtp] = useState("");
+  return (
+    <div className="flex justify-center">
+      <OtpInput
+        value={otp}
+        onChange={setOtp}
+        numInputs={6}
+        separator={<span className="mx-1">-</span>}
+        inputStyle="w-10 h-10 border rounded text-center"
+        isInputNum
+      />
+    </div>
+  );
+}
+
+export default OTPInput;
+`
+
+//Badges
+const badge=`
+import React from "react";
+
+function Badges() {
+    const badges = [
+        { label: "New", color: "bg-green-100 text-green-800" },
+        { label: "Beta", color: "bg-yellow-100 text-yellow-800" },
+        { label: "Pro", color: "bg-purple-100 text-purple-800" },
+        { label: "Coming Soon", color: "bg-blue-100 text-blue-800" },
+        { label: "🔥 Trending", color: "bg-red-100 text-red-800" },
+      ];
+  return (
+    <div className="flex flex-wrap gap-3 p-4 bg-white shadow rounded">
+      {badges.map((badge, index) => (
+        <span
+          key={index}
+          className="{px-3 py-1 text-sm font-semibold rounded-full '}"
+        >
+          {badge.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+export default Badges;
+
+`
+
 export default function App() {
   return (
     <div className="w-full">
@@ -262,6 +364,27 @@ export default function App() {
           <h2 className="text-3xl font-bold mb-6 text-brown-900">
             All Components
           </h2>
+          {/* Theme Picker */}
+
+          <div id="themePicker">
+            <h3 className="text-xl font-bold">ThemePicker Component</h3>
+            <ComponentPreview title="Theme Picker" code={themePicker}>
+              {/* <ThemePicker /> */}
+              <p>Sorry my Friend 😊 No Preview Available  </p>
+            </ComponentPreview>
+
+          </div>
+
+          {/* otp Input 
+          <div id="otpInput">
+            <h3 className="text-xl font-bold">OTP Input</h3>
+            <ComponentPreview title="OTP Input" code={otpInput}>
+              <OTPInput/>
+            </ComponentPreview>
+
+          </div> */}
+
+
           {/* ------------------------------------------------- */}
           <div id="navbarSection">
             <h3 className="text-xl font-bold">Navbar Component</h3>
@@ -320,6 +443,17 @@ export default function App() {
               <FloatingLabelInput />
             </ComponentPreview>
           </div>
+
+          {/* badges section */}
+          <div id="badgeSection">
+            <h3 className="text-xl font-bold">Badge Component</h3>
+            <ComponentPreview title="Badge" code={badge}>
+              <Badges/>
+            </ComponentPreview>
+
+          
+          </div>
+
         </main>
       </div>
     </div>

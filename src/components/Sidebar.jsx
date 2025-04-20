@@ -1,5 +1,7 @@
 
 const categories = [
+  { name: "ThemePicker", id: "themePicker" },
+  // { name: "OTPInput", id: "otpInput" },
   { name: "Navbar", id: "navbarSection" },
   { name: "Toggle", id: "toggleSection" },
   { name: "Button", id: "buttonSection" },
