@@ -1,9 +1,3 @@
-// src/App.jsx
-// import Navbar from "./components/Navbar/Navbar.jsx";
-// import Sidebar from "./components/Sidebar";
-// import ComponentPreview from "./components/ComponentPreview";
-// import Toggle from "./components/Toggle.jsx"
-// import { useState } from "react";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Sidebar from "./components/Sidebar";
@@ -15,6 +9,8 @@ import GhostButton from "./components/Buttons/GhostButton.jsx";
 import SimpleCard from "./components/Cards/SimpleCard.jsx";
 import ProfileCard from "./components/Cards/ProfileCard.jsx";
 import ImageCard from "./components/Cards/ImageCard.jsx";
+import PasswordInput from "./components/Inputs/PasswordInput.jsx";
+import FloatingLabelInput from "./components/Inputs/FloatingLabelInput.jsx";
 
 const navbarCode = `
               import React from 'react'
@@ -108,7 +104,7 @@ const outlineButton = `
   
 `;
 
-const ghostButton =`
+const ghostButton = `
     import React from "react";
     
     function GhostButton() {
@@ -123,10 +119,10 @@ const ghostButton =`
     
     export default GhostButton;
     
-`
+`;
 // card section
 
-const simpleCard =`
+const simpleCard = `
   import React from "react";
   
   function SimpleCard() {
@@ -141,9 +137,9 @@ const simpleCard =`
   }
   
   export default SimpleCard;
-`
+`;
 
-const profileCard =`
+const profileCard = `
   import React from "react";
   
   function ProfileCard() {
@@ -167,8 +163,8 @@ const profileCard =`
   
   export default ProfileCard;
   
-`
-const imageCard=`
+`;
+const imageCard = `
   import React from "react";
   
   function ImageCard() {
@@ -193,55 +189,70 @@ const imageCard=`
   
   export default ImageCard;
   
+`;
+
+//input component
+
+const passwordInput=`
+  import React from "react";
+  import { useState } from "react";
+  import { FiEye, FiEyeOff } from "react-icons/fi";
+  
+  function PasswordInput() {
+      const [show, setShow] = useState(false);
+    return (
+      <div>
+        <div className="relative max-w-xs">
+          <input
+            type={show ? "text" : "password"}
+            placeholder="Password"
+            className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+          />
+          <button
+            type="button"
+            onClick={() => setShow(!show)}
+            className="absolute right-3 top-2.5 text-gray-500"
+          >
+            {show ? <FiEyeOff /> : <FiEye />}
+          </button>
+        </div>
+      </div>
+    );
+  }
+  
+  export default PasswordInput;
 `
 
+const floatingLabelInput=`
+  import React from "react";
+  
+  function FloatingLabelInput() {
+    return (
+      <div>
+        <div className="relative w-full max-w-xs">
+          <input
+            type="text"
+            id="floating"
+            placeholder=" "
+            className="peer w-full border border-gray-300 rounded px-3 pt-5 pb-2 focus:outline-none focus:border-blue-500"
+          />
+          <label
+            htmlFor="floating"
+            className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"
+          >
+            Your Name
+          </label>
+        </div>
+      </div>
+    );
+  }
+  
+  export default FloatingLabelInput;
+  
+`
 
 export default function App() {
   return (
-    // <div className="w-full">
-    //   <Navbar />
-    //   <div className="flex">
-    //     <Sidebar />
-    //     <main className="flex-1 p-8 overflow-y-auto">
-    //       <h2 className="text-3xl font-bold mb-6 text-brown-900">
-    //         All Components
-    //       </h2>
-    //       <div>
-    //       <a className="bg-amber-200" href="#testSection">Click me</a>
-    //       </div>
-    //       {/* <ComponentPreview title="NavBar" code={navbarCode}>
-    //         <Navbar/>
-    //       </ComponentPreview> */}
-    //       {/* THIS IS FOR TOOGLE BUTTON */}
-
-    //       <ComponentPreview title="Toggle Button" code={toogleButton}>
-    //         <Toggle/>
-    //       </ComponentPreview>
-    //       <ComponentPreview title="Toggle Button" code={toogleButton}>
-    //         <Toggle/>
-    //       </ComponentPreview>
-    //       <ComponentPreview title="Toggle Button" code={toogleButton}>
-    //         <Toggle/>
-    //       </ComponentPreview>
-    //       <ComponentPreview title="Toggle Button" code={toogleButton}>
-    //         <Toggle/>
-    //       </ComponentPreview>
-    //       <ComponentPreview title="Toggle Button" code={toogleButton}>
-    //         <Toggle/>
-    //       </ComponentPreview>
-    //       <ComponentPreview title="Toggle Button" code={toogleButton}>
-    //         <Toggle/>
-    //       </ComponentPreview>
-
-    //       <div id="testSection">
-    //       <ComponentPreview title="Toggle test" code={toogleButton} >
-    //         <Toggle/>
-    //       </ComponentPreview>
-    //       </div>
-    //     </main>
-    //   </div>
-    // </div>
-
     <div className="w-full">
       <Navbar />
 
@@ -267,33 +278,46 @@ export default function App() {
           </div>
           {/* ---------------buttonSection---------------------------------- */}
           <div id="buttonSection">
-            <h3 className="text-xl font-bold py-2" >Button Component</h3>
+            <h3 className="text-xl font-bold py-2">Button Component</h3>
 
             <ComponentPreview title="Primary Button" code={primaryButton}>
-              <PrimaryButton/>
+              <PrimaryButton />
             </ComponentPreview>
 
             <ComponentPreview title="Outline Button" code={outlineButton}>
-              <OutlineButton/>
+              <OutlineButton />
             </ComponentPreview>
 
             <ComponentPreview title="Ghost Button" code={ghostButton}>
-              <GhostButton/>
+              <GhostButton />
             </ComponentPreview>
           </div>
           {/* -------------------cardSection -----------------------------*/}
           <div id="cardSection">
             <h3 className="text-xl font-bold">Card Component</h3>
             <ComponentPreview title="Simple Card" code={simpleCard}>
-              <SimpleCard/>
+              <SimpleCard />
             </ComponentPreview>
 
             <ComponentPreview title="Profile Card" code={profileCard}>
-              <ProfileCard/>
+              <ProfileCard />
             </ComponentPreview>
 
             <ComponentPreview title="Image Card" code={imageCard}>
-              <ImageCard/>
+              <ImageCard />
+            </ComponentPreview>
+          </div>
+
+          {/* inputComponents */}
+
+          <div id="inputSection">
+            <h3 className="text-xl font-bold">Input Component</h3>
+            <ComponentPreview title="Password Input" code={passwordInput}>
+              <PasswordInput />
+            </ComponentPreview>
+
+            <ComponentPreview title="Floadting Input" code={floatingLabelInput}>
+              <FloatingLabelInput />
             </ComponentPreview>
           </div>
         </main>
