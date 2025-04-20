@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import { FaGithub } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -16,11 +17,18 @@ function Navbar() {
         <a href="/docs" className="hover:underline font-medium">
           Docs
         </a>
-        <a href="#" className="hover:underline font-medium">
+        <a href="/feedback" className="hover:underline font-medium">
           Feedback
         </a>
         <button className="bg-brown-700 text-black px-4 py-1 border-r-black rounded cursor-pointer border-1 border-r-2">
-          GitHub
+          <a
+            href="https://github.com/rakesh709"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            <FaGithub size={20} />
+          </a>
         </button>
       </nav>
     </header>
